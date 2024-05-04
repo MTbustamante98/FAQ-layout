@@ -16,6 +16,7 @@ body {
   height: 100vh;
   font-family: "Work Sans"; 
   position: relative;
+  width: 100vw;
 }
 
 .conteudo-principal {
