@@ -45,7 +45,7 @@ h1::before {
   position: absolute;
   left: -20px;
   top: 45px;
-  background-image: url('/assets/images/icon-star.svg');
+  background-image: url('../assets/images/icon-star.svg');
   background-size: cover;
 }
 
