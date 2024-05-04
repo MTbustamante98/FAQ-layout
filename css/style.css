@@ -29,24 +29,19 @@ body {
   padding-bottom: 20px;
 }
 
-h1 {
+.conteudo-titulo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 36px 30px;
+}
+
+.conteudo-titulo h1 {
   position: relative;
   font-size: 3rem;
   font-weight: 700;
   color: var(--cor3);
-  padding: 36px;
-  margin-left: 50px;
-}
-
-h1::before {
-  content: '';
-  width: 40px;
-  height: 40px;
-  position: absolute;
-  left: -20px;
-  top: 45px;
-  background-image: url('../assets/images/icon-star.svg');
-  background-size: cover;
+  
 }
 
 .conteudo-perguntas button {
@@ -76,7 +71,7 @@ h1::before {
   margin-top: 20px;
 }
 
-.conteudo-perguntas div:nth-child(-n+3)::after {
+.conteudo-perguntas > dl > div:nth-child(-n+3)::after {
   content: '';
   display: block;
   width: 85%;
@@ -128,10 +123,10 @@ h1::before {
     font-size: 2.5rem;
   }
 
-  h1::before {
-    height: 24px;
+  .icon-star {
     width: 24px;
-    top: 50px;
+    height: 24px;
+    gap: 25px;
   }
 
   .conteudo-principal {
