@@ -24,8 +24,9 @@ body {
   height: auto;
   background-color: var(--cor0);
   position: absolute;
-  left: 685px;
-  top: 200px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   border-radius: 20px;
   padding-bottom: 20px;
 }
@@ -120,8 +121,8 @@ body {
 
 @media (max-width: 800px) {
   
-  h1 {
-    font-size: 2.5rem;
+  .conteudo-titulo h1 {
+    font-size: 2rem;
   }
 
   .icon-star {
@@ -135,10 +136,10 @@ body {
     height: auto;
     background-color: var(--cor0);
     position: absolute;
-    left: 70px;
-    top: 50px;
+    left: 50%;
+    top: 50%;     
+    transform: translate(-50%, -50%);
     border-radius: 20px;
-    padding-bottom: 20px;
   }
 
   .icon-plus,
