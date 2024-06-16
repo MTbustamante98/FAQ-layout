@@ -43,30 +43,15 @@ body {
   font-size: 3rem;
   font-weight: 700;
   color: var(--cor3);
-  
 }
 
-.conteudo-perguntas button {
-  color: var(--cor3);
-  border: none;
-  background: none;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  text-align: left;
-  display: flex;
-  align-items: center;
-  padding: 12px 30px;
+.bg-image img {
+  width: 100%;
+  height: auto;
 }
 
-.icon-minus {
-  display: none;
-}
-
-.icon-plus,
-.icon-minus {
-  position: absolute;
-  left: 470px;
+.conteudo-perguntas {
+  position: relative;
 }
 
 .conteudo-perguntas div:nth-of-type(n+2) button {
@@ -84,14 +69,6 @@ body {
 }
 
 .conteudo-perguntas dd {
-  display: none;
-}
-
-.conteudo-perguntas dd.ativa {
-  display: block;
-}
-
-.conteudo-perguntas dd {
   color: var(--cor2);
   font-size: 0.895rem;
   font-weight: 400;
@@ -100,10 +77,45 @@ body {
   padding-left: 30px;
 }
 
+.conteudo-perguntas dt {
+  margin: 24px 0 15px 30px;
+  font-weight: 600;
+  /* display: flex; */
+  
+}
 
-.bg-image img {
-  width: 100%;
-  height: auto;
+.js-accordion dt::after {
+  content: '';
+  background: url('../assets/images/icon-plus.svg');
+  width: 30px;
+  height: 31px;
+  position: absolute;
+  left: 470px;
+  transform: translateY(-5px);
+}
+
+.js-accordion dt.ativo::after {
+  content: '';
+  background: url('../assets/images/icon-minus.svg');
+}
+
+.js-accordion dd {
+  display: none;
+}
+
+.js-accordion dd.ativo {
+  display: block;
+  animation: slideDown .5s forwards;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+  } to {
+    opacity: 1;
+    max-height: 200px;
+  }
 }
 
 .attribution { 
@@ -120,7 +132,10 @@ body {
 }
 
 @media (max-width: 800px) {
-  
+  .conteudo-titulo {
+    padding-bottom: 5px;
+  }
+
   .conteudo-titulo h1 {
     font-size: 2rem;
   }
@@ -132,7 +147,7 @@ body {
   }
 
   .conteudo-principal {
-    width: 375px;
+    width: 330px;
     height: auto;
     background-color: var(--cor0);
     position: absolute;
@@ -142,21 +157,19 @@ body {
     border-radius: 20px;
   }
 
-  .icon-plus,
-  .icon-minus {
-    position: absolute;
-    left: 320px;
-  }
-
-  .conteudo-principal button {
-    max-width: 30ch;
-    line-height: 1.3;
-    padding: 8px 30px;
-    margin-top: -15px;
+  .conteudo-perguntas dt {
+    max-width: 25ch;
+    position: relative;
+    display: flex;
   }
 
   .conteudo-principal dd {
     max-width: 280px;
+  }
+
+  .js-accordion dt::after {
+    position: absolute;
+    transform: translate(-210px, 0px);
   }
 
   .attribution {

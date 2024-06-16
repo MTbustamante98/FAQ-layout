@@ -1,37 +1,23 @@
-const perguntas = document.querySelectorAll(".conteudo-perguntas button");
+function initAccordion() {
+const accordionList = document.querySelectorAll('.js-accordion dt');
 
-function ativarPergunta(event) {
-  const pergunta = event.currentTarget;
-  const controls = pergunta.getAttribute("aria-controls");
-  const resposta = document.getElementById(controls);
-  
-
-  resposta.classList.toggle("ativa");
-  const ativa = resposta.classList.contains("ativa");
-  pergunta.setAttribute("aria-expanded", ativa);
+if(accordionList.length) {
+  accordionList[0].classList.add('ativo')
+  accordionList[0].nextElementSibling.classList.add('ativo')
 }
 
-function eventosPerguntas(pergunta) {
-  pergunta.addEventListener("click", ativarPergunta);
+function accordionClick(event) {
+  //console.log(event.currentTarget)
+  this.classList.toggle('ativo')
+  this.nextElementSibling.classList.toggle('ativo')
 }
 
-perguntas.forEach(eventosPerguntas);
+accordionList.forEach((item) => {
+  item.addEventListener('click', accordionClick)
+})
+}
 
-perguntas.forEach(dt => {
-  const plusIcon = dt.querySelector(".icon-plus");
-  const minusIcon = dt.querySelector(".icon-minus");
-
-  plusIcon.addEventListener("click", function() {
-    plusIcon.style.display = 'none';
-    minusIcon.style.display = 'inline';
-  });
-
-  minusIcon.addEventListener("click", function() {
-    minusIcon.style.display = 'none';
-    plusIcon.style.display = 'inline';
-  });
-});
-
+initAccordion()
 
 
 
